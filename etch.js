@@ -10,13 +10,32 @@ function createGrid(number) {
         container.appendChild(square);
     }
 }
-createGrid(50);
+createGrid(16);
 
-const squares = Array.from(document.querySelectorAll(".square"));
+function draw() {
+    const squares = Array.from(document.querySelectorAll(".square"));
 
-squares.forEach(square => {
-    square.addEventListener("mouseover", function(e) {
-        if(e.buttons == 1) 
-            square.style.backgroundColor = "black";
+    squares.forEach(square => {
+        square.addEventListener("mouseover", function(e) {
+            if(e.buttons == 1) 
+                square.style.backgroundColor = "black";
+        })
     })
+}
+
+draw();
+
+const resetbtn = document.querySelector(".reset");
+
+resetbtn.addEventListener("click", function(e) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    let input = 0;
+    do {
+        input = window.prompt("Enter a new size for the grid (must be a number in the range of 16 to 100).")
+    } 
+    while(input < 16 || input > 100)
+    createGrid(input);
+    draw();
 })
