@@ -10,12 +10,13 @@ function createGrid(number) {
         container.appendChild(square);
     }
 }
-createGrid(16);
+createGrid(50);
 
 const squares = Array.from(document.querySelectorAll(".square"));
 
 squares.forEach(square => {
-    square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "black";
+    square.addEventListener("mouseover", function(e) {
+        if(e.buttons == 1) 
+            square.style.backgroundColor = "black";
     })
 })
