@@ -20,6 +20,9 @@ function draw() {
             if(e.buttons == 1) 
                 square.style.backgroundColor = "black";
         })
+        square.addEventListener("mousedown", function(e) {
+            square.style.backgroundColor = "black"; 
+        })
     })
 }
 
