@@ -3,7 +3,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .container {
@@ -13,7 +12,10 @@ body {
     border: solid 2px black;
 }
 
-
+.reset {
+    margin-bottom: 20px;
+    padding: 5px 20px;
+}
 
 
 
